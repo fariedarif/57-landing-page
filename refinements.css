@@ -1,0 +1,129 @@
+/* Faried's 2 November revision: soft corners, quieter colour, editorial photo spacing.
+   Explicitly supersedes the generic skill's square/pill-only preference. */
+h1,h2,h3{color:var(--green);letter-spacing:-.04em}
+.button{border-radius:var(--radius-control);font-weight:500;padding-inline:25px;transition:transform .18s ease,background-color .18s ease}
+.button:hover{background:#1a382b}
+.button.light:hover{background:var(--paper)}
+.text-link{font-weight:500;text-decoration-thickness:1px;text-underline-offset:7px}
+.site-nav a{color:var(--green)}
+.site-header{padding-top:20px;padding-bottom:14px}
+.hero{overflow:visible;min-height:calc(100svh - 88px)}
+.hero-copy{overflow:hidden;isolation:isolate}
+.hero-media{margin-inline:16px;border-radius:var(--radius-photo)}
+.hero-media img{border-radius:inherit}
+.intro-photo,.dish-photo,.office-photo,.food-pair picture,.drink-item picture,.room,.offer-image,.heritage-photo,.entrance{overflow:hidden;border-radius:var(--radius-photo)}
+.intro-photo img,.dish-photo img,.office-photo img,.food-pair img,.drink-item img,.room img,.offer-image img,.heritage-photo img,.entrance img{border-radius:inherit}
+.intro{padding-top:48px;padding-bottom:48px}
+.intro-photo{width:90%;justify-self:end}
+.intro-photo img{aspect-ratio:16/10}
+.menu{margin-inline:12px;padding-inline:12px;border-radius:var(--radius-section);background:var(--paper)}
+.menu-tabs{gap:8px}
+.menu-tabs a{background:transparent;color:var(--green);border-radius:var(--radius-control);transition:background-color .18s ease}
+.menu-tabs a:hover{background:var(--sage)}
+.menu-tabs a[aria-selected=true]{background:var(--green);color:var(--cream)}
+.menu-foot p{max-width:59ch}
+.family-photo{margin-inline:16px}
+.family-photo .food{overflow:hidden;border-radius:var(--radius-photo);background:var(--cream);padding:6px;right:8px}
+.family-photo .food img{border:0;border-radius:11px}
+.offer{margin-inline:12px;padding:30px 20px 36px;border-radius:var(--radius-section);background:var(--sage);color:var(--ink);gap:26px}
+.offer-main{color:var(--green)}
+.offer-image img{aspect-ratio:4/3;object-position:50% 65%}
+.offer-terms{font-size:16px}
+.heritage{padding-top:52px}
+.heritage-photo{margin-inline:16px}
+.heritage-photo img{aspect-ratio:4/3}
+.booking{margin-inline:12px;padding-inline:20px;border-radius:var(--radius-section);background:var(--paper)}
+.booking .motif{right:-200px}
+.mobile-booking{background:var(--cream);padding-inline:16px}
+.mobile-booking .button{border-radius:12px}
+.footer{padding-top:32px}
+.motif{opacity:.045;animation-name:batik-soft-in}
+@keyframes batik-soft-in{from{transform:translateX(14px);opacity:0}to{transform:translateX(0);opacity:.045}}
+@media(min-width:700px){
+ .hero{min-height:calc(100svh - 108px)}
+ .hero-media{margin-inline:24px;border-radius:20px}
+ .intro{padding-block:65px}
+ .intro-photo{width:100%}
+ .intro-photo img{aspect-ratio:1.15}
+ .menu{margin-inline:24px;padding-inline:16px}
+ .family-photo{margin-inline:0}
+ .family-photo .food{right:-8px;width:43%}
+ .offer{margin-inline:24px;padding:40px 30px;gap:40px;grid-template-columns:1fr 1fr}
+ .offer-image img{aspect-ratio:4/5}
+ .heritage-photo{margin-inline:24px}
+ .heritage-photo img{aspect-ratio:16/9}
+ .booking{margin-inline:24px;padding-inline:30px}
+}
+@media(min-width:1050px){
+ .site-header{padding-block:25px}
+ .hero{grid-template-columns:43% 57%;padding-right:32px;min-height:0}
+ .hero-copy{padding-top:48px;padding-bottom:48px}
+ .hero-media{margin:0;border-radius:22px}
+ .hero-media img{min-height:540px}
+ .hero-copy .motif{right:-60px;bottom:-60px}
+ .intro{padding-block:76px;grid-template-columns:1.15fr 1fr;gap:100px}
+ .intro-photo{width:88%;justify-self:end}
+ .intro-photo img{aspect-ratio:1.5}
+ .menu{margin-inline:32px;padding:64px 32px}
+ .menu-stage{grid-template-columns:1.1fr 1fr;gap:72px}
+ .dish-photo img{aspect-ratio:4/3}
+ .office{grid-template-columns:1.05fr 1fr;padding-block:80px;gap:90px}
+ .office-photo{width:94%}
+ .office-photo img{aspect-ratio:4/4.2}
+ .family{grid-template-columns:1fr 1.1fr;padding-bottom:80px}
+ .family-photo .room img{aspect-ratio:4/3}
+ .offer{margin-inline:32px;padding:40px 44px;grid-template-columns:1.05fr 1fr;gap:80px}
+ .offer-image img{aspect-ratio:4/3}
+ .offer h2{max-width:15ch}
+ .heritage{padding-top:80px}
+ .heritage-photo{margin-inline:32px}
+ .heritage-photo img{aspect-ratio:16/8}
+ .heritage-copy{padding-top:40px}
+ .booking{margin-inline:32px;padding:64px 32px}
+ .booking .motif{right:-135px}
+}
+@media(max-width:359px){.menu{margin-inline:10px;padding-inline:10px}.offer,.booking{padding-inline:18px}.hero-media,.heritage-photo,.family-photo{margin-inline:12px}.hero-copy{padding-bottom:20px}}
+@media(prefers-reduced-motion:reduce){.motif{opacity:.045}.button{transition:none}}
+/* Content revision: people, drinks posters, complete hours and an embedded menu. */
+.intro-photo img{aspect-ratio:1;object-position:50% 55%}
+.family-photo{padding-bottom:0;margin-bottom:28px}
+.family-photo .room img{aspect-ratio:3/2;object-fit:contain}
+.drink-intro{max-width:58ch;margin-bottom:24px}
+.drink-intro p{margin-top:12px}
+.drink-gallery{display:grid;grid-auto-flow:column;grid-auto-columns:min(78vw,340px);gap:20px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--gold) transparent;padding-bottom:14px}
+.drink-gallery figure{scroll-snap-align:start;min-width:0}
+.drink-gallery picture{overflow:hidden;border-radius:var(--radius-photo)}
+.drink-gallery img{height:auto;object-fit:contain}
+.drink-gallery figcaption{font:400 23px/1.3 var(--display);color:var(--green);padding-top:15px}
+.drink-gallery figcaption span{display:block;font:15px/1.5 var(--body);color:var(--ink);margin-top:6px}
+.gallery-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px;font-size:14px}
+.gallery-controls>div{display:flex;gap:8px}
+.gallery-controls button{width:46px;min-height:46px;border:0;border-radius:10px;background:var(--sage);color:var(--green);font-size:22px}
+.gallery-controls button:disabled{opacity:.35;cursor:default}
+.opening-hours{margin-top:28px;max-width:440px}
+.opening-hours h3{font-size:24px}
+.opening-hours dl{margin:16px 0 0}
+/* taste-skill-ignore: dividers align the day and time rows in the weekly schedule. */
+.opening-hours dl div{display:flex;justify-content:space-between;gap:16px;padding-block:7px;font-size:16px} /* taste-skill-ignore: real schedule rows / actual modal overlay. */
+.opening-hours dd{margin:0;text-align:right}
+.opening-hours p{font-size:14px;line-height:1.5}
+.menu-is-open{overflow:hidden}
+/* taste-skill-ignore: shadow belongs to an actual modal overlay. */
+.menu-dialog{width:min(1020px,calc(100% - 24px));height:calc(100dvh - 24px);max-width:none;max-height:calc(100dvh - 24px);padding:0;border:0;border-radius:18px;background:var(--cream);color:var(--ink);overflow:hidden;box-shadow:0 18px 90px #14241c44} /* taste-skill-ignore: real schedule rows / actual modal overlay. */
+.menu-dialog[open]{display:flex;flex-direction:column}
+.menu-dialog::backdrop{background:#14241cc7}
+.menu-dialog-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;flex-shrink:0}
+.menu-dialog-head h2{font-size:24px;letter-spacing:-.025em}
+.menu-dialog-head form{margin:0}
+.menu-close{display:flex;align-items:center;gap:10px;min-height:46px;min-width:78px;justify-content:center;border:0;border-radius:10px;background:var(--paper);color:var(--green);font-size:15px}
+.menu-close span{font-size:25px;line-height:1}
+.menu-frame-wrap{flex:1;min-height:0;background:#e5e5e5}
+.menu-frame-wrap iframe{display:block;border:0;width:100%;height:100%}
+.menu-dialog-foot{flex-shrink:0;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px))}
+.menu-dialog-foot p{font-size:14px;line-height:1.4}
+.menu-dialog-foot .button{white-space:nowrap;min-width:136px}
+.inline-menu{padding-block:32px}.inline-menu iframe{width:100%;height:70vh;border:0;margin-block:20px}
+@media(min-width:700px){.family-photo{margin-bottom:0}.intro-photo img{aspect-ratio:4/5}.menu-dialog{height:90dvh;max-height:1000px}.menu-dialog-head{padding:14px 24px}.menu-dialog-foot{padding:14px 24px}}
+@media(min-width:1050px){.intro-photo img{aspect-ratio:1}.family-photo .room img{aspect-ratio:3/2}}
+
+@media(min-width:1050px){.hero-media{height:clamp(580px,48vw,700px)}.hero-media img{height:100%;min-height:0;object-fit:cover;object-position:50% 64%}}
